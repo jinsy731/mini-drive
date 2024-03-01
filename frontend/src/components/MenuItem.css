@@ -1,0 +1,21 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .icon-placeholder {
+    width: 24px;
+    height: 24px;
+    background-color: #d0d0d0;
+    margin-right: 12px;
+  }
+  
+  .menu-text .title {
+    font-weight: bold;
+  }
+  
+  .menu-text .subtitle {
+    color: #606060;
+  }

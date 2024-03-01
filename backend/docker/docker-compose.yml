@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13  # 특정 버전을 명시
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env.prod  # 환경 변수 파일
+    ports:
+      - "5432:5432"
+volumes:
+  pgdata:

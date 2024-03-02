@@ -1,5 +1,5 @@
 import * as bcrypt from "bcrypt"
-import { User } from "src/user/user.model"
+import { User } from "src/user/domain/user.model"
 
 jest.mock("bcrypt", () => ({
     hash: jest.fn().mockResolvedValue("MOCK_HASH")

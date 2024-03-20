@@ -1,3 +1,4 @@
+import { InvalidPasswordException } from './../../common/exception/InvalidPasswordException';
 import * as bcrypt from "bcrypt"
 
 export class User {
@@ -14,7 +15,13 @@ export class User {
         return new User({
             email: email,
             name: name,
-            passwd: await bcrypt.hash(passwd, 10)
+            passwd: passwd
         })
+    }
+
+    async authenticate(plainPasswd: string) {
+        const match = await bcrypt.compare(plainPasswd, this.passwd)
+
+        if(!match) throw new InvalidPasswordException()
     }
 }

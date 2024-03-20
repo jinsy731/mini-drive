@@ -19,3 +19,15 @@ model User {
   name    String  @db.VarChar(50) // Longest name in the world is 49 letters.
   passwd  String  
 }
+
+model RefreshToken {
+  jti     String      @id
+  userId  Int
+  payload String
+  status  TokenStatus @default(USE)
+}
+
+enum TokenStatus {
+  USE
+  DISCARD
+}

@@ -1,6 +1,6 @@
 import { HttpStatus } from "@nestjs/common";
-import BaseException from "../exception/baseException";
-import { ErrorCode } from "../exception/errorCode";
+import BaseException from "../exception/BaseException";
+import { ErrorCode } from "../exception/ErrorCode";
 
 export class JWTTokenExpiredException extends BaseException {
     constructor() {

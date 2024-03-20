@@ -8,6 +8,11 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
+  app.enableCors({
+    origin: "http://localhost:3000",
+    methods: "GET, HEAD, PUT, PATCH, POST, DELETE",
+    credentials: true, // 인증 정보(쿠키, Authorization 헤더 등) 포함 여부
+  })
 
   const config = new DocumentBuilder()
   .setTitle("Mini Drive API")
